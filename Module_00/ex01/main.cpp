@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:58:14 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/01/25 20:25:34 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/01/25 22:18:57 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 
 void ft_enter()
 {
-	std::cout << "\n[1] ADD \n[2] SEARCH \n[3] EXIT \n\n   Chose  :  ";
-	
+	std::cout << "\n[1] ADD \n[2] SEARCH \n[3] EXIT \n[4] CLEAR\n\n   Chose  :  ";
 }
 
 int main()
@@ -36,13 +35,12 @@ int main()
 			phoneBook.Search();
 		else if (input == "3")
 			phoneBook.Exit();
+		else if (input == "4")
+			system("clear");
 		else
 		{
 			if (input == "")
-			{
-				// ft_enter();
 				continue ;
-			}
 			std::cout << "invalide input \n";
 		}
 		input.clear();
