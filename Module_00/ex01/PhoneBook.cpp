@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 04:37:59 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/01/25 20:30:19 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/01/26 22:39:34 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,13 +105,25 @@ void PhoneBook::Add()
 int if_is_num(std::string str, std::string msg, int index)
 {
 	int i;
-
-	i = (str[0] - 48);
-	while (i < 0 || i > index - 1)
+	
+	while (str.length() != 1)
 	{
+		if (std::cin.eof())
+			exit(1);
 		std::cout << "Index out of range" << std::endl;
 		std::cout << msg;
-		std::cin >> i;
+		std::getline(std::cin , str);		
+	}
+
+	i = (str[0] - 48);
+	while (( i < 0 || i > index - 1) && str.length() == 1)
+	{
+		if (std::cin.eof())
+			exit(1);
+		std::cout << "Index out of range" << std::endl;
+		std::cout << msg;
+		std::getline(std::cin , str);
+		i = (str[0] - 48);
 	}
 	return i;
 }
@@ -136,6 +148,8 @@ void	PhoneBook::Search()
 	
 	std::cout << "Ste Index : ";
 	std::getline(std::cin , index);
+	if (!std::cin)
+            exit(0);
 	i = if_is_num(index, "Ste Index : ", this->index);
 	std::cout << "+----------+----------+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|  INDEX   |  F_NAME  |  L_NAME  | NICKNAME | P_NUMBER | D_SECRET |" << std::endl;

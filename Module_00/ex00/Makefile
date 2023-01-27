@@ -6,13 +6,13 @@
 #    By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 03:42:02 by yer-retb          #+#    #+#              #
-#    Updated: 2023/01/25 20:38:41 by yer-retb         ###   ########.fr        #
+#    Updated: 2023/01/25 23:24:34 by yer-retb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Megaphone
 
-SRC = megaphone.cpp
+SRC = Megaphone.cpp
 
 CC = c++
 
