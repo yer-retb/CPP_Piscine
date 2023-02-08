@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 02:39:52 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/01/30 23:57:54 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/01/30 21:04:11 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/01/31 23:13:00 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMAN_A_HPP
+# define HUMAN_A_HPP
 
-Zombie*    zombieHorde(int N, std::string name)
+#include "Weapon.hpp"
+#include <iostream>
+#include <string>
+
+class HumanA
 {
-	Zombie *z = new Zombie [N];
+	private :
+		std::string type;
+		Weapon &W_A;
+	public :
+		HumanA(std::string str, Weapon &a);
+		void	attack();
+		
+};
 
-	for(int i = 0; i < N; i++)
-	{
-		z[i].set_name(name);
-		z[i].announce();
-	}
-	delete[] z;
-	return (z);
-}
+#endif
