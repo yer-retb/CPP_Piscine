@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:25:24 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/08 04:43:23 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/08 20:01:30 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@ void	my_replace(char **av, std::string line)
 	std::string f_name = av[1];
 	std::string s1 = av[2];
 	std::string s2 = av[3];
+	if (s1.empty()){
+		std::cout << "empty string" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+	if (s2.empty()){
+		std::cout << "empty string" << std::endl;
+		exit(EXIT_FAILURE);
+	}
 	while ((i = line.find(s1, i)) != -1)
 	{
 		line.erase(i, s1.length());

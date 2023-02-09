@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 21:04:09 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/09 02:36:59 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/08 20:45:06 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/09 02:20:36 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-HumanA::HumanA(std::string str, Weapon &a) : type(str), W_A(a)
-{
+#include <iostream>
+#include <string>
 
-}
+class harl {
+	private :
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	
+	public :
+		void complain(std::string level);
+};
 
-void	HumanA::attack()
-{
-		std::cout << type << " attacks with their " << W_A.getType() << std::endl;
-}
+void temporer(std::string str);
+
+#endif

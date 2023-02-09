@@ -6,13 +6,13 @@
 #    By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 04:45:59 by yer-retb          #+#    #+#              #
-#    Updated: 2023/02/08 04:46:31 by yer-retb         ###   ########.fr        #
+#    Updated: 2023/02/09 02:01:48 by yer-retb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Harl
 
-SRC = main.cpp
+SRC = main.cpp harl.cpp
 
 CC = c++
 
