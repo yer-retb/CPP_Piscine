@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 04:45:41 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/09 03:07:08 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/11 00:40:02 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main()
 {
-	harl s;
-	s.complain("debug");
-	s.complain("info");
-	s.complain("warning");
-	s.complain("NULL");
+	harl harl;
+	harl.complain("debug");
+	harl.complain("info");
+	harl.complain("warning");
+	harl.complain("error");
 }

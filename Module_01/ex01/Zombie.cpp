@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 22:25:48 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/01/30 03:59:19 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/10 23:57:21 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie()
 {
-	std::cout << "constructor has been called" << std::endl; 
+	std::cout << "Default Constructor Called" << std::endl; 
 }
 
 void	Zombie::set_name(std::string name)

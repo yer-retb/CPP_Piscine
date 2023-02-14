@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 00:11:37 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/01/30 01:15:36 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/10 23:55:46 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,3 @@ Zombie*	newZombie(std::string name);
 void	randomChump(std::string name);
 
 #endif
-
-
-//parametre constracter 
-//copy constracter 
-//default constracter 
-//copy asignment constacter

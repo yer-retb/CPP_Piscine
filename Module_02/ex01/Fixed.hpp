@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 20:45:06 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/10 16:56:48 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/12 02:31:29 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/12 23:59:40 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
-#include <string>
+#include <cmath>
 
-class harl {
+class Fixed{
+
 	private :
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
-	
+		int fix;
+		static const int bit = 8;
+
 	public :
-		void complain(std::string level);
+		Fixed();
+		Fixed(const Fixed &other);
+		Fixed(const int i);
+		Fixed(const float num);
+		Fixed& operator=(const Fixed &other);
+		~Fixed();
+		
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+		
+		float toFloat(void) const;
+		int toInt(void) const;
+
 };
+
+std::ostream &operator<<(std::ostream &other ,const Fixed &Fixed);
 
 #endif

@@ -5,33 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 21:04:20 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/11 00:21:57 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/12 02:31:37 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/13 00:02:30 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Fixed.hpp"
 
-int main()
+int main( void ) 
 {
-	{
-    	Weapon  club = Weapon("crude spiked club");
-    	HumanA bob("Bob", club);
-    	bob.attack();
-    	club.setType("some other type of club");
-    	bob.attack();
-	}
 
-	{
-		Weapon  club = Weapon("AKA");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club : M16");
-		jim.attack();
-	}
-
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	
+	a = Fixed( 1234.4321f );
+	
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	
 	return 0;
 }

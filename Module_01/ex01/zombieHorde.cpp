@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 02:39:52 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/01/30 23:57:54 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/10 23:59:15 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ Zombie*    zombieHorde(int N, std::string name)
 		z[i].set_name(name);
 		z[i].announce();
 	}
-	delete[] z;
 	return (z);
 }

@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 22:24:58 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/11 00:00:58 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/09 22:20:25 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/10 17:11:17 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int main()
-{
-	Zombie *z = zombieHorde(6, "MyTest");
-	delete[] z;
-}
+#include <iostream>
+
+class Fixed{
+
+	private :
+		int fix;
+		static const int bit = 8;
+
+	public :
+		Fixed();
+		Fixed(const Fixed &other);
+		Fixed& operator=(const Fixed &other);
+		~Fixed();
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+};
+
+#endif
