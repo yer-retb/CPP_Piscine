@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 02:31:19 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/14 01:58:23 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/15 16:11:30 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,30 @@ std::ostream &operator<<(std::ostream &other ,const Fixed &Fixed)
 
 Fixed Fixed::operator+(const Fixed &other) const
 {
-	return Fixed (fix + other.fix);
+	Fixed x;
+	x.setRawBits(this->fix + other.fix);
+	return (x);
 }
 
 Fixed Fixed::operator-(const Fixed &other) const
 {
-	return Fixed (fix - other.fix);
+	Fixed x;
+	x.setRawBits(this->fix - other.fix);
+	return (x);
 }
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
-	return Fixed (fix * other.fix);
+	Fixed x;
+	x.setRawBits((this->fix * other.fix) / (1 << bit));
+	return (x);
 }
 
 Fixed Fixed::operator/(const Fixed &other) const
 {
-	return Fixed (fix / other.fix);
+	Fixed x;
+	x.setRawBits((this->fix / other.fix) * (1 << bit));
+	return (x);
 }
 
 bool Fixed::operator>(const Fixed &other) const

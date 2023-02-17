@@ -5,27 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 02:31:37 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/15 00:03:38 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/15 22:33:35 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/17 22:16:11 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-#include <iostream>
-int main( void ) 
+int main()
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+	ClapTrap ach("ash");
+	ScavTrap fuze("fuze");
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	
+	ach.attack("doki");
+	ach.takeDamage(5);
+	ach.beRepaired(100);
 
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	std::cout << "\n***************************************\n" << std::endl;
+	
+	fuze.attack("bandit");
+	fuze.takeDamage(50);
+	fuze.beRepaired(50);
+	fuze.guardGate();
 }

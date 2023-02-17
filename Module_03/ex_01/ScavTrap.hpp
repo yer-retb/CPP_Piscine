@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 02:31:37 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/15 00:03:38 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/17 03:36:25 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/17 20:48:25 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
-int main( void ) 
-{
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+#include "ClapTrap.hpp"
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+class ScavTrap : public ClapTrap {
+	
+	public : 
 
-	std::cout << b << std::endl;
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap (const ScavTrap &other);
+		ScavTrap& operator=(const ScavTrap &other);
+		~ScavTrap();
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+		void guardGate();
+};
+
+#endif
