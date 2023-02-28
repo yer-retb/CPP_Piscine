@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 22:34:19 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/17 03:54:01 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/18 01:51:30 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class ClapTrap {
 
 	protected :
 		std::string Name;
-		int hit_p;
-		int energy_p;
-		int attack_damege;
+		unsigned int hit_p;
+		unsigned int energy_p;
+		unsigned int attack_damege;
 
 	public : 
 

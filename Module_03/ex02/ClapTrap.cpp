@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 22:34:15 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/17 22:36:41 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:08:20 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,4 @@ void ClapTrap::beRepaired (unsigned int amout)
 		std::cout << "your hit point are new " << this->hit_p << " on it" << std::endl;
 	}
 }
+

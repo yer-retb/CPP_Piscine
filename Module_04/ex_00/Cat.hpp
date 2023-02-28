@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 02:31:37 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/18 01:49:05 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/21 03:20:26 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/28 02:21:11 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main( void ) 
+# include "Animal.hpp"
+
+class Cat : public Animal
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+	public:
+		Cat(void);
+		Cat(std::string type);
+		Cat(Cat const & other);
+		~Cat(void);
+		Cat &operator=(Cat const &other);
+		void makeSound(void) const;
+};
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+#endif

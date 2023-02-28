@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 02:31:37 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/18 01:49:05 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/21 02:24:52 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/26 23:49:36 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main( void ) 
+# include <iostream>
+
+class Animal
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+	protected:
+		std::string type;
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
+	public:
+		Animal();
+		Animal(Animal const &other);
+		virtual ~Animal();
+		Animal &operator= (Animal const &other);
+		virtual void makeSound (void) const;
+		std::string getType(void) const;
+};
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+#endif

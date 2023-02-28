@@ -5,25 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 02:31:37 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/18 01:49:05 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/21 02:22:37 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/28 02:42:31 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-int main( void ) 
+int main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+	// const Animal* dog = new Dog();
+	// const Animal* cat = new Cat();
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
+	// std::cout << dog->getType() << std::endl;
+	// std::cout << cat->getType() << std::endl;
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	// dog->makeSound();
+	// cat->makeSound();
+	
+	// delete cat;
+	// delete dog;
+	
+	Cat A;
+	{
+		Cat tmp = A;
+	}
+
+	return (0);
 }

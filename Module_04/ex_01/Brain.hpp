@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 22:33:35 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/17 03:32:10 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/02/25 01:45:13 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/02/27 20:20:23 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main()
-{
-	ClapTrap ach("ach");
+#include <iostream>
 
+class Brain{
+
+	private:
+		std::string ideas[100];
 	
-	ach.attack("doki");
-	ach.takeDamage(5);
-	ach.beRepaired(15);
-}
+	public:
+		Brain(void);
+		Brain(Brain const &other);
+		~Brain(void);
+		Brain &operator=(Brain const &other);
+};
+
+#endif
