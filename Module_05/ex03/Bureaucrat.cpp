@@ -6,11 +6,12 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 21:05:32 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/03/05 00:01:02 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:56:15 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default"){
 	this->grade = 0;
@@ -67,8 +68,25 @@ void Bureaucrat::decrement(void){
 		throw GradeTooLowException();
 }
 
+void Bureaucrat::signForm(AForm &a)
+{
+	if(a.get_sign() == true)
+		std::cout << name << " signed " << a.get_name() << std::endl;
+	else
+		std::cout << name << " couldn't sign " << a.get_name() << " because "<< grade << " is too low"<< std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const & Aform)
+{
+	if (Aform.get_sign() == false)
+		std::cout << name << " can't execute " << Aform.get_name() << " because it's not signed" << std::endl;
+	else
+		std::cout << name << " executed " << Aform.get_name() << std::endl;
+}
+
 std::ostream &operator<<(std::ostream &first, const Bureaucrat &second)
 {
 	first << second.getName() << " , bureaucrat grade " << second.getGrade();
 	return (first);
 }
+

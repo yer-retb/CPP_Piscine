@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 21:08:06 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/03/06 22:30:08 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/03/10 00:22:26 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/03/12 20:37:40 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Base.hpp" 
 
-int main (void)
+int main ()
 {
-	try{
-		Bureaucrat A("ela",10);
-		A.increment();
-		A.increment();
-		A.increment();
-		std::cout << A << std::endl;
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
+	Base *base = generate();
+	identify(*base);
+	std::cout << "***************************************" << std::endl;
+	identify(base);
+	delete base;
+	return (0);
 }

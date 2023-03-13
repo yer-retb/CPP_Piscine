@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 21:08:06 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/03/06 22:30:08 by yer-retb         ###   ########.fr       */
+/*   Created: 2023/03/09 06:21:47 by yer-retb          #+#    #+#             */
+/*   Updated: 2023/03/09 20:45:47 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef DATA_HPP
+#define DATA_HPP
 
-int main (void)
-{
-	try{
-		Bureaucrat A("ela",10);
-		A.increment();
-		A.increment();
-		A.increment();
-		std::cout << A << std::endl;
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
-}
+#include <iostream>
+
+struct Data{
+	int n;
+};
+
+class Serializer {
+
+	public:
+		Serializer();
+		~Serializer();
+		Serializer (Serializer const & other);
+		Serializer &operator=(Serializer const & other);
+		uintptr_t serialize (Data* ptr);
+		Data* deserialize (uintptr_t raw);
+};
+
+#endif
