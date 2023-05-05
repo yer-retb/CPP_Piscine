@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:13:16 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/04/24 14:36:49 by user             ###   ########.fr       */
+/*   Created: 2023/05/03 10:20:59 by user              #+#    #+#             */
+/*   Updated: 2023/05/04 18:22:18 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
-#include <vector>
-#include <algorithm>
+#ifndef BITCOINEXCHANE_HPP
+#define BITCOINEXCHANE_HPP
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
+#include <map>
 
-class Span {
-	private :
-		unsigned int _N;
-		std::vector<int> span;
-	public :
-		Span ();
-		Span (unsigned int _N);
-		~Span ();
-		Span (Span const &other);
-		Span &operator=(Span const &other);
-
-		void addNumber(int n);
-		long long shortestSpan();
-		long long longestSpan();
-		void ft_range(std::vector<int> _V);
-		
+class BitcoinExchange
+{
+	private:
+		std::map<std::string, int> _Map;	
+	public:
+		BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &other);
+		BitcoinExchange &operator=(const BitcoinExchange &other);
+		~BitcoinExchange();
 };
 
 #endif
