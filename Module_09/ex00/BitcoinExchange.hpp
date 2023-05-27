@@ -1,19 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 10:20:59 by user              #+#    #+#             */
-/*   Updated: 2023/05/04 18:22:18 by user             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef BITCOINEXCHANE_HPP
 #define BITCOINEXCHANE_HPP
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include <cstdlib>
 #include <map>
@@ -21,12 +11,15 @@
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, int> _Map;	
+		std::map<std::string, float> _Map;
+
 	public:
 		BitcoinExchange();
+		BitcoinExchange(std::string &filename);
 		BitcoinExchange(const BitcoinExchange &other);
 		BitcoinExchange &operator=(const BitcoinExchange &other);
 		~BitcoinExchange();
+		float	find_data(std::string &date, float &prix);
 };
 
 #endif
