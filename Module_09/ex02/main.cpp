@@ -4,6 +4,14 @@
 bool    t = false;
 int     tmp;
 
+int	ft_strlen(char *str)
+{
+	int i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 void    ft_check_ac(int ac, char **av)
 {
 	if (ac < 2)
@@ -20,14 +28,16 @@ void    ft_check_ac(int ac, char **av)
 
     for (int i = 1; i < ac; i++)
     {
-        size_t result = str.find(av[i]);
-        if (result == std::string::npos)
+		for(int j = 0; j < ft_strlen(av[i]); j++)
         {
-            std::cout << "Erorr: input invalid." << std::endl;
-            exit (2);
-        }
+			size_t result = str.find(av[i][j]);
+        	if (result == std::string::npos)
+        	{
+        	    std::cout << "Erorr: input invalid." << std::endl;
+        	    exit (2);
+        	}
+		}
     }
-    
 }
 
 void    ft_check_numbers(char *s1, char *s2)

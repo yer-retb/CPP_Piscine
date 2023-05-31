@@ -37,6 +37,11 @@ RPN::RPN(std::string str)
             stack.pop();
             int y = stack.top();
             stack.pop();
+			if (stack.empty())
+			{
+				std::cout << "Error: can't execute this operation" << std::endl;
+				exit(2);
+			}
             if (str[i] == '+')
                 stack.push(y + x);
             else if (str[i] == '-')

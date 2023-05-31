@@ -6,6 +6,12 @@ void	print_file_error()
 	exit (2);
 }
 
+void	print_empty_error()
+{
+	std::cout <<"Error: empty file." << std::endl;
+	exit (2);
+}
+
 void	print_arg_error()
 {
 	std::cout << "Error: bad arguments." << std::endl;
@@ -175,6 +181,8 @@ void	data_management (char *av)
 	{
 		std::string tmp;
 		std::getline(file, tmp);
+		if (tmp.empty())
+			print_empty_error();
 		while (std::getline(file, tmp))
 		{
 			float prix;

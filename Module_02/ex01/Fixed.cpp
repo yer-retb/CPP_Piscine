@@ -6,7 +6,7 @@
 /*   By: yer-retb <yer-retb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 02:31:19 by yer-retb          #+#    #+#             */
-/*   Updated: 2023/02/12 23:11:43 by yer-retb         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:00:17 by yer-retb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,15 @@ Fixed::Fixed(const int i)
 	fix = i << bit;
 }
 
-Fixed::Fixed(const float num)
+Fixed::Fixed(const double num)
 {
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << "double constructor called" << std::endl;
 	fix = roundf(num * (1 << bit));
 }
 
-float Fixed::toFloat(void) const
+double Fixed::todouble(void) const
 {
-	return ((float) fix / (1 << bit));
+	return ((double) fix / (1 << bit));
 }
 
 int Fixed::toInt(void) const
@@ -68,6 +68,6 @@ int Fixed::toInt(void) const
 
 std::ostream &operator<<(std::ostream &other ,const Fixed &Fixed)
 {
-	other << Fixed.toFloat();
+	other << Fixed.todouble();
 	return other;
 }
