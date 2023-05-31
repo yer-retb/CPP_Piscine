@@ -3,6 +3,11 @@
 void    ft_check_content(std::string str)
 {
     size_t i = 0;
+	if (!str[i])
+	{
+		std::cout << "Error: Empty string" << std::endl;
+		exit(2);
+	}
     while (i < str.length()){
         if (str[i] != ' ' && str[i] != '+' && str[i] != '-' && str[i] != '*' && str[i] != '/' && !isdigit(str[i]))
         {
@@ -35,13 +40,13 @@ RPN::RPN(std::string str)
         {
             int x = stack.top();
             stack.pop();
-            int y = stack.top();
-            stack.pop();
 			if (stack.empty())
 			{
 				std::cout << "Error: can't execute this operation" << std::endl;
 				exit(2);
 			}
+            int y = stack.top();
+            stack.pop();
             if (str[i] == '+')
                 stack.push(y + x);
             else if (str[i] == '-')
@@ -60,6 +65,11 @@ RPN::RPN(std::string str)
         }
         i++;
     }
+	if (stack.size() > 1 || stack.size() < 1)
+	{
+		std::cout << "Error: can't execute this operation" << std::endl;
+		exit(2);
+	}	
     std::cout << stack.top() << std::endl;
 }
 

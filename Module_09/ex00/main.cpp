@@ -100,6 +100,8 @@ bool	ft_check_num(std::string &str)
 	int i = 0;
 	int j = 0;
 	int k = 0;
+	if (str.empty())
+		return (false);
 	while (str[i] != '\0')
 	{
 		if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != '-')
@@ -124,11 +126,10 @@ bool	ft_check_amount(std::string str, float &prix)
 	{
 		std::stringstream ss;
 		s1 >> tmp;
-		if (tmp.empty())
-			return (false);
+		
 		std::getline (s1, tmp, '|');
 		tmp.erase(0, 1);
-		tmp.erase(tmp.size() - 1);
+		tmp.erase(tmp.size());
 		if (!ft_check_num(tmp))
 			return (false);
 		ss << tmp;
