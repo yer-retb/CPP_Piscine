@@ -62,19 +62,17 @@ void    vector_sort(int ac, std::vector<std::pair<int, int> > v)
     }
     std::vector<int> tmp_v1, tmp_v2;
 
-    for(size_t i = 0; i < v.size(); i++)
-        tmp_v1.push_back(v[i].first);
-
+	for (size_t i = 0; i < (v.size()); i++)
+		tmp_v1.insert(std::upper_bound(tmp_v1.begin(), tmp_v1.end(), v[i].first), v[i].first);
+		
     for(size_t i = 0; i < v.size(); i++)
         tmp_v2.push_back(v[i].second);
-
-    std::sort(tmp_v1.begin(), tmp_v1.end());
 
     for(size_t i = 0; i < tmp_v2.size(); i++)
         tmp_v1.insert(std::upper_bound(tmp_v1.begin(), tmp_v1.end(), tmp_v2[i]), tmp_v2[i]);
     if (t == true)
         tmp_v1.insert(std::upper_bound(tmp_v1.begin(), tmp_v1.end(), tmp), tmp);
-    
+
     gettimeofday(&end, NULL);
     std::cout << "\nAfter : ";
     for(size_t i = 0; i < tmp_v1.size(); i++)
@@ -96,21 +94,22 @@ void    deque_sort(int ac, std::deque<std::pair<int, int> > d)
         if (d[i].first > d[i].second)
             std::swap(d[i].first, d[i].second);
     }
-    std::vector<int> tmp_v1, tmp_v2;
+    std::deque<int> tmp_d1, tmp_d2;
 
     for(size_t i = 0; i < d.size(); i++)
-        tmp_v1.push_back(d[i].first);
+        tmp_d1.push_back(d[i].first);
 
     for(size_t i = 0; i < d.size(); i++)
-        tmp_v2.push_back(d[i].second);
+        tmp_d2.push_back(d[i].second);
 
-    std::sort(tmp_v1.begin(), tmp_v1.end());
+    for (size_t i = 0; i < (d.size()); i++)
+		tmp_d1.insert(std::upper_bound(tmp_d1.begin(), tmp_d1.end(), d[i].first), d[i].first);
 
-    for(size_t i = 0; i < tmp_v2.size(); i++)
-        tmp_v1.insert(std::upper_bound(tmp_v1.begin(), tmp_v1.end(), tmp_v2[i]), tmp_v2[i]);
+    for(size_t i = 0; i < tmp_d2.size(); i++)
+        tmp_d1.insert(std::upper_bound(tmp_d1.begin(), tmp_d1.end(), tmp_d2[i]), tmp_d2[i]);
     if (t == true)
-        tmp_v1.insert(std::upper_bound(tmp_v1.begin(), tmp_v1.end(), tmp), tmp);
-    
+        tmp_d1.insert(std::upper_bound(tmp_d1.begin(), tmp_d1.end(), tmp), tmp);
+
     gettimeofday(&end, NULL);
     secound = end.tv_sec - start.tv_sec;
     micro = end.tv_usec - start.tv_usec;
